@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.navbar {
+    width: 100%;
+    height: 48px;
+    background-color: black;
+}
+
+.navbar ul, li {
+    display: inline-block;
+    height: 100%;
+}
+
+.navbar ul li a {
+    line-height: 48px;
+    display: inline-block;
+    height: 100%;
+    color: white;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    text-decoration: none;
+}
+
+.navbar ul li a:hover{
+    color: blue;
+    cursor: pointer;
+}
+
+.notelist {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.notelist .note {
+    width: 254px;
+    height: 300px;
+    background-color: #6c5ce7;
+    color: white;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+.noteform {
+    width: 50%;
+    margin-top: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.noteform textarea {
+    width: 100%;
+    height: 300px;
+}
