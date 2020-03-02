@@ -5,6 +5,7 @@ Collaborative playlist creation with python, vlc, and a dash of bash
 1. Dependencies
 2. Setup
 3. Use
+4. Notes
 
 ## Dependencies
 There aren't many dependencies for this program, though there are a few
@@ -31,3 +32,7 @@ Setup is really simple once you have all the dependencies in order,
 
 And that's really it, the server is running! You should be able to get to it from `http://127.0.0.1:5000`, make some requests and then press play in VLC and the server will handle the rest!
 
+## Notes
+The only thing that I should really point out is that the server works by downloading the requests as an audio file from youtube then queueing them into VLC, therefore it will take up space on your machine while the server is running.
+The queue is also generated via creating files on the machine, these also take up space (and will make things a little confusing between sessions).
+You can take care of both of these by deleting the files in `notes` and `songs`, but please do not delete `addtovlc.sh` in the songs directory, that will break the auto queue feature.
