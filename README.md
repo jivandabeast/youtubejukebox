@@ -2,10 +2,11 @@
 Collaborative playlist creation with python, vlc, and a dash of bash
 
 ## Table of Contents
-1. Dependencies
-2. Setup
-3. Use
-4. Notes
+1. [Dependencies](https://github.com/jivandabeast/youtubejukebox#dependencies)
+2. [Setup](https://github.com/jivandabeast/youtubejukebox#setup)
+3. [Saving the Playlist](https://github.com/jivandabeast/youtubejukebox#saving-the-playlist)
+4. [Cleaning Up](https://github.com/jivandabeast/youtubejukebox#cleaning-up)
+5. [Notes](https://github.com/jivandabeast/youtubejukebox#notes)
 
 ## Dependencies
 There aren't many dependencies for this program, though there are a few
