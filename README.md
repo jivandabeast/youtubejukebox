@@ -55,5 +55,5 @@ You can take care of both of these by deleting the files in `notes` and `songs`,
 
 ## TODO
 * Make it look somewhat decent
-* Make scripts to clean out the temporary files (songs and queue, separately to allow a user to keep a playlist)
-* Somehow fix unicode handling (it did NOT like when I tried to add an Alt-J song, due to the logo)
+* Somehow fix unicode handling (it did NOT like when I tried to add an Alt-J song, due to the logo
+* Make a script that filters out Rick Rolls (and maybe other things as well?)
