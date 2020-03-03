@@ -29,8 +29,23 @@ Setup is really simple once you have all the dependencies in order,
     * Click on "Interface"
     * Click "Allow only one instance"
     * Click on "Enqueue items into playlist in one instance mode"
+3. Configure the VLC  plugin "Now Playing in Texts"
+    * You can download the plugin [here](https://addons.videolan.org/p/1172613/)
+    * Copy the file over to `/usr/lib/vlc/lua/playlist/` or `/usr/share/vlc/lua/extensions/`
+    * Restart VLC (or launch it if it wasn't already open), click "View", and then click the checkbox next to "Now Playing in texts"
+        * You might need to check this box every time you open VLC, I haven't found a way to enable it by default
 
 And that's really it, the server is running! You should be able to get to it from `http://127.0.0.1:5000`, make some requests and then press play in VLC and the server will handle the rest!
+
+Whenever you want to use it again, just open VLC (ensure that "Now Playing in texts" is enabled, one instance mode should stay enabled persistently) and launch the server using the same command!
+
+## Saving the Playlist
+If you would like to save the playlist, I have provided a script to combine the temporary playlist files into one file titled `playlist.txt`, just run `createplaylist.sh` from the directory it is saved in by default and it should handle the rest.
+
+## Cleaning Up
+Because this script works by downloading the songs from youtube, you may wish to clear these files out. I have included two simple bash scripts, `clearplaylists.sh`
+and `clearsongs.sh` which clear out their respective parts. Make sure to run them from the proper directory (that being the directory that they exist in)!
+I made them separate scripts because you may wish to keep the songs and/or playlists 
 
 ## Notes
 The only thing that I should really point out is that the server works by downloading the requests as an audio file from youtube then queueing them into VLC, therefore it will take up space on your machine while the server is running.
