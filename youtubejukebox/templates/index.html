@@ -1,6 +1,15 @@
 {% extends 'layout.html' %}
 
 {% block content%}
+    <div class="nowplayingheader">
+        <h2>Currently Playing:</h2>
+    </div>
+    <div class="nowplaying">
+        <p>{{ now_playing }}</p>
+    </div>
+    <div class="playlistheader">
+        <h2>Current Playlist:</h2>
+    </div>
     <div class="notelist">
         {% for note in notes %}
             <div class="note">
