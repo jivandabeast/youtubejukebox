@@ -122,3 +122,13 @@ textarea {
     margin: 4px 2px;
     cursor: pointer;
 }
+
+.howreq ol li{
+    display: list-item;
+    list-style-position: inside;
+    padding-left: 5%;
+}
+
+.howreq ul{
+    text-indent: 0.5rem;
+}
