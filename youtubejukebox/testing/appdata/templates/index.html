@@ -5,26 +5,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Jukebox</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href={{ url_for("static", filename="assets/bootstrap/css/bootstrap.min.css")}}>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arbutus+Slab">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
-    <link rel="stylesheet" href="assets/css/Animated-Text-Background.css">
-    <link rel="stylesheet" href="assets/css/Bootstrap-4---Timeline.css">
-    <link rel="stylesheet" href="assets/css/Button-Outlines---Pretty.css">
-    <link rel="stylesheet" href="assets/css/dh-navbar-inverse.css">
-    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
-    <link rel="stylesheet" href="assets/css/Pretty-Search-Form.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href={{ url_for("static", filename="assets/fonts/fontawesome-all.min.css")}}>
+    <link rel="stylesheet" href={{ url_for("static", filename="assets/fonts/font-awesome.min.css")}}>
+    <link rel="stylesheet" href={{ url_for("static", filename="assets/fonts/fontawesome5-overrides.min.css")}}>
+    <link rel="stylesheet" href={{ url_for("static", filename="assets/css/Animated-Text-Background.css")}}>
+    <link rel="stylesheet" href={{ url_for("static", filename="assets/css/Bootstrap-4---Timeline.css")}}>
+    <link rel="stylesheet" href={{ url_for("static", filename="assets/css/Button-Outlines---Pretty.css")}}>
+    <link rel="stylesheet" href={{ url_for("static", filename="assets/css/dh-navbar-inverse.css")}}>
+    <link rel="stylesheet" href={{ url_for("static", filename="assets/css/Navigation-Clean.css")}}>
+    <link rel="stylesheet" href={{ url_for("static", filename="assets/css/Pretty-Search-Form.css")}}>
+    <link rel="stylesheet" href={{ url_for("static", filename="assets/css/styles.css")}}>
 </head>
 
 <body>
     <div class="d-flex justify-content-center align-items-center" id="animatedTextBackground">
         <h1 id="animatedTextHeading">
-            IPSUM
+            {{ heading_text_one }}
             <br>
-            LOREM
+            {{ heading_text_two }}
         </h1>
         <a class="btn btn-link border-pretty" role="button" style="color:#ce9c95;" href="#search">
             <i class="fas fa-search"></i>
@@ -75,9 +75,9 @@
         </div>
     </div>
     </div>
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/js/Animated-Text-Background.js"></script>
+        <script src={{ url_for("static", filename="assets/js/jquery.min.js")}}></script>
+        <script src={{ url_for("static", filename="assets/bootstrap/js/bootstrap.min.js")}}></script>
+        <script src={{ url_for("static", filename="assets/js/Animated-Text-Background.js")}}></script>
 </body>
 
 </html>
