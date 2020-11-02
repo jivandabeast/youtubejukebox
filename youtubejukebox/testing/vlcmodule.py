@@ -25,7 +25,6 @@ while True:
 #        playurl = best.url
         player = vlcInstance.media_player_new()
         vlcMedia = vlcInstance.media_new(streamURL)
-        vlcMedia.get_mrl
         player.set_media(vlcMedia)
 #       player = vlc.MediaPlayer(playurl)
         print(player.get_state())
