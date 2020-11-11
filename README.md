@@ -52,8 +52,3 @@ I made them separate scripts because you may wish to keep the songs and/or playl
 The only thing that I should really point out is that the server works by downloading the requests as an audio file from youtube then queueing them into VLC, therefore it will take up space on your machine while the server is running.
 The queue is also generated via creating files on the machine, these also take up space (and will make things a little confusing between sessions).
 You can take care of both of these by deleting the files in `notes` and `songs`, but please do not delete `addtovlc.sh` in the songs directory, that will break the auto queue feature.
-
-## TODO
-* Make it look somewhat decent
-* Somehow fix unicode handling (it did NOT like when I tried to add an Alt-J song, due to the logo
-* Make a script that filters out Rick Rolls (and maybe other things as well?)
