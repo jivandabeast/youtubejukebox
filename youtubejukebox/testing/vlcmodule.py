@@ -1,45 +1,47 @@
 #  -*- coding: utf-8 -*-
 
-import os
-import pafy
 import vlc
-import re
 import time
 import youtube_dlc
+from threading import Thread
+from queue import Queue
 
 def getURL(url):
-    with youtube_dlc.YoutubeDL() as ydl:
+    ydl_opts = {
+        'quiet':True
+    }
+    with youtube_dlc.YoutubeDL(ydl_opts) as ydl:
         videoInfo = ydl.extract_info(url, download=False)
     return videoInfo["formats"][0]["url"]
 
-while True:
-    url = input("What is the URL? ")
-    print()
-    try:
-        print("Getting Video URL")
-        streamURL = getURL(url)
-        print(streamURL)
-#        video = pafy.new(url)
-#        best = video.getbestaudio()
-        vlcInstance = vlc.Instance()
-#        playurl = best.url
-        player = vlcInstance.media_player_new()
+def playSong(q):
+    vlcInstance = vlc.Instance()
+    player = vlcInstance.media_player_new()
+    while True:
+        inputURL = q.get()
+        streamURL = getURL(inputURL)
         vlcMedia = vlcInstance.media_new(streamURL)
         player.set_media(vlcMedia)
-#       player = vlc.MediaPlayer(playurl)
-        print(player.get_state())
-        print("Playing in VLC")
         player.play()
         time.sleep(1.5)
         staticState = player.get_state()
         currentState = player.get_state()
         while currentState == staticState:
             currentState = player.get_state()
-            time.sleep(3)
-        print()
-        print()
+            time.sleep(1)
+        q.task_done
+
+
+q = Queue(maxsize=0)
+worker = Thread(target=playSong, args=(q,))
+worker.setDaemon(True)
+worker.start()
+
+while True:
+    url = input("What is the URL? ")
+    try:
+        getURL(url)
+        q.put(url)
     except:
-        print()
-        print("There was an error processing that video, please try again")
-        print()
-        print()
+        print("Failed to parse " + str(url))
+    print()
