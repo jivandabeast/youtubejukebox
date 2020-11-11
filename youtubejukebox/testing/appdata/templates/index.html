@@ -20,6 +20,7 @@
 </head>
 
 <body>
+
     <div class="d-flex justify-content-center align-items-center" id="animatedTextBackground">
         <h1 id="animatedTextHeading">
             {{ heading_text_one }}
@@ -33,14 +34,25 @@
             <i class="fas fa-music"></i>
         </a>
     </div>
-    <form
-        id="search" class="search-form">
+
+
+    <form method="POST" id="search" class="search-form">
         <div class="input-group">
-            <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-search"></i></span></div><input class="form-control" type="text" placeholder="I am looking for..">
-            <div class="input-group-append"><button class="btn btn-light" type="button">Search </button></div>
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="fa fa-search"></i>
+                </span>
+            </div>
+            <input class="form-control" type="text" placeholder="I am looking for.." name="songLink" id="songLink">
+            <div class="input-group-append">
+                <button class="btn btn-light" type="submit" name="linkSubmit">Search </button>
+            </div>
         </div>
-        </form><div class="timeline">
-<div class="container py-5">
+    </form>
+
+
+    <div class="timeline">
+    <div class="container py-5">
 
         <div class="row">
             <div class="col-lg-7 mx-auto">

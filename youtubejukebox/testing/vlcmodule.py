@@ -32,16 +32,25 @@ def playSong(q):
         q.task_done
 
 
+def addSong(url):
+    try:
+        getURL(url)
+        q.put(url)
+    except:
+        print("Adding song failed")
+    return None
+
+
 q = Queue(maxsize=0)
 worker = Thread(target=playSong, args=(q,))
 worker.setDaemon(True)
 worker.start()
 
-while True:
-    url = input("What is the URL? ")
-    try:
-        getURL(url)
-        q.put(url)
-    except:
-        print("Failed to parse " + str(url))
-    print()
+#while True:
+#    url = input("What is the URL? ")
+#    try:
+#        getURL(url)
+#        q.put(url)
+#    except:
+#        print("Failed to parse " + str(url))
+#    print()
