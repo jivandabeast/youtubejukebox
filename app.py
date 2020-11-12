@@ -14,15 +14,15 @@ def getURL(url):
     }
     with youtube_dlc.YoutubeDL(ydl_opts) as ydl:
         videoInfo = ydl.extract_info(url, download=False)
-    return videoInfo["formats"][0]["url"]
+    return videoInfo
 
 def playSong(q):
     vlcInstance = vlc.Instance()
     player = vlcInstance.media_player_new()
     while True:
         inputURL = q.get()
-        streamURL = getURL(inputURL)
-        vlcMedia = vlcInstance.media_new(streamURL)
+#        streamURL = getURL(inputURL)
+        vlcMedia = vlcInstance.media_new(inputURL)
         player.set_media(vlcMedia)
         player.play()
         time.sleep(1.5)
@@ -36,8 +36,9 @@ def playSong(q):
 
 def addSong(url):
     try:
-        getURL(url)
-        q.put(url)
+        vidInfo = getURL(url)
+        streamUrl = vidInfo["formats"][0]["url"]
+        q.put(streamUrl)
         return True
     except:
         print("Adding song failed")
@@ -59,7 +60,9 @@ def index():
             print('Processing Request ' + songRequest)
             print()
             if addSong(songRequest):
-                return render_template('index.html', heading_text_one="Added", heading_text_two=songRequest)
+                videoTitle = getURL(songRequest)
+                videoTitle = videoTitle["title"]
+                return render_template('index.html', heading_text_one="Added", heading_text_two=videoTitle)
             else:
                 return render_template('index.html', heading_text_one="Couldn't", heading_text_two="Add")
         else:
